@@ -28,6 +28,7 @@ O **AR2 Sheriff Bot** gerencia duelos ranqueados no estilo Faroeste:
 - 🤠 **Xerifes (Hosters)** criam duelos no saloon
 - 🔫 **Pistoleiros (Jogadores)** entram nos bandos Vermelho ou Azul
 - 🏆 **Sheriffs (Admins)** definem o resultado final dos tiroteios
+- 📊 **Ranking Ao Vivo** - Top 100 atualizado automaticamente
 - 🌵 Sistema de troféus para subir no ranking
 - 👥 Sistema de parceiros para duelar em dupla
 
@@ -164,8 +165,26 @@ Os **Xerifes** são responsáveis por criar e organizar os duelos ranqueados do 
 | `/perfil [membro]` | Exibe perfil ranqueado (troféus, divisão, winrate, histórico) | Todos |
 | `/top [pagina]` | Ranking global dos melhores pistoleiros | Todos |
 | `/historico [membro]` | Histórico das últimas 15 partidas | Todos |
+| `/stats [membro]` | 📊 Análise estatística avançada (KDA, consistência, insights) | Todos |
 
-### 👥 Parceiros de Duelo
+### 🏆 Ranking Ao Vivo
+
+| Comando | Descrição | Quem pode usar |
+|---------|-----------|----------------|
+| `/rankingconfig [canal] [intervalo]` | Configura ranking ao vivo com notificações @everyone | Apenas Sheriffs (Admins) |
+| `/forcarank` | Força atualização imediata do ranking | Apenas Sheriffs (Admins) |
+
+**Como funciona o Ranking Ao Vivo:**
+- � Atualiza automaticamente a cada 30 minutos (configurável)
+- 📌 Mensagem fixada no canal de ranking
+- 🎉 Notifica @everyone quando:
+  - Novo jogador entra no Top 3
+  - Mudanças de posição no Top 3
+  - Alguém alcança Rank Mestre (2800+ troféus)
+- 📊 Mostra Top 100 com paginação por botões
+- 📈 Estatísticas do servidor (total de pistoleiros, troféus)
+
+### �👥 Parceiros de Duelo
 
 | Comando | Descrição |
 |---------|-----------|
@@ -199,6 +218,8 @@ Os **Xerifes** são responsáveis por criar e organizar os duelos ranqueados do 
 | `/config canal_log [canal]` | Define canal de logs |
 | `/config trofeus [vitoria] [derrota]` | Define troféus por vitória/derrota |
 | `/config ver` | Exibe configurações atuais |
+| `/rankingconfig [canal] [intervalo]` | 🏆 Configura ranking ao vivo (padrão: 30 min) |
+| `/forcarank` | 🔄 Força atualização imediata do ranking |
 
 ---
 
@@ -320,7 +341,10 @@ Execute no Discord como Sheriff (Admin):
 /config canal_resultados #resultados-duelos
 /config canal_log        #logs-xerifes
 /config trofeus vitoria:34 derrota:17
+/rankingconfig #ranking-ao-vivo 30
 ```
+
+> 🏆 O ranking ao vivo atualiza automaticamente a cada 30 minutos e notifica @everyone de mudanças importantes!
 
 ### Personalizar divisões
 
@@ -402,12 +426,13 @@ await bot.tree.sync(guild=discord.Object(id=SEU_SERVER_ID))
 
 ## 📝 Notas da Versão
 
-### v2.0 — Temática Faroeste
-- 🤠 Temática Wild West completa
-- 🎯 Apenas Hosters podem criar duelos
-- 🏆 Apenas Admins podem definir resultados
-- 🔫 Sistema de votação removido (agora apenas admins definem resultado)
-- 🌵 Mensagens temáticas em todos os comandos
+### v2.1 — Ranking Ao Vivo & Estatísticas Avançadas
+- 🏆 Sistema de Ranking Ao Vivo (atualiza a cada 30 min)
+- 📊 Comando `/stats` com análise detalhada (KDA, consistência, insights)
+- � Notificações @everyone para mudanças no Top 3
+- 🎯 Detecção automática de novos Mestres (2800+ troféus)
+- 📈 Estatísticas de horário de pico
+- 📊 Análise de volatilidade e consistência
 
 ---
 
