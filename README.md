@@ -1,148 +1,73 @@
 <div align="center">
 
-# 🌵 OUT SAIDERS 🤠 AR2 Sheriff Bot
+# 🤠 AR2 Sheriff Bot
 
-### *Sistema Profissional de Duelos Ranqueados para Apocalypse Rising 2*
+### *Sistema de Duelos Ranqueados para Apocalypse Rising 2*
 
-[![Discord](https://img.shields.io/badge/Discord-OUT%20SAIDERS-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg)
+[![Discord](https://img.shields.io/badge/Discord-Servidor%20do%20Dono-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/Hy68Ht6St6)
 [![Roblox](https://img.shields.io/badge/Roblox-AR2-000000?style=for-the-badge&logo=roblox&logoColor=white)](https://roblox.com)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-
-<img src="https://cdn.discordapp.com/emojis/129312.png" width="100" height="100" alt="Sheriff">
-
-**Bot de duelos ranqueados no tema Faroeste (Wild West)**  
-*Para servidores Discord do jogo Apocalypse Rising 2 (Roblox)*
-
-[Sistema de Blacklist](#-sistema-de-blacklist--procurados) • [Comandos](#-comandos) • [Instalação](#-instalação)
 
 </div>
 
 ---
 
-## 📋 Índice
-1. [Visão Geral](#-visão-geral)
-2. [Recursos](#-recursos)
-3. [Requisitos](#-requisitos)
-4. [Instalação](#-instalação)
-5. [Configuração](#-configuração)
-6. [Sistema de Blacklist / Procurados](#-sistema-de-blacklist--procurados)
-7. [Comandos](#-comandos)
-8. [Sistema de Divisões](#-sistema-de-divisões)
-9. [Screenshots](#-screenshots)
-10. [Créditos](#-créditos)
+## 📝 O que é o AR2 Sheriff Bot?
+
+Bot de Discord profissional para gerenciamento de **duelos ranqueados** no estilo **Faroeste (Wild West)** para jogadores de **Apocalypse Rising 2 (Roblox)**.
+
+### Funcionalidades Principais:
+
+- � **Sistema de Duelos** - Criação de partidas 1v1 até 5v5
+- 🏆 **Ranking Ranqueado** - Sistema de troféus e divisões
+- 🚫 **Blacklist Profissional** - 30+ códigos de banimento
+- 📊 **Estatísticas** - Perfil completo de cada jogador
+- 🖼️ **Imagens Customizáveis** - 20+ slots de imagens configuráveis
 
 ---
 
-## 🎯 Visão Geral
+## � Índice
 
-O **OUT SAIDERS AR2 Sheriff Bot** é um sistema profissional de duelos ranqueados no estilo Faroeste:
-
-| Funcionalidade | Descrição |
-|---------------|-----------|
-| 🤠 **Xerifes** | Criam duelos no saloon e gerenciam partidas |
-| 🔫 **Pistoleiros** | Entram nos bandos Vermelho ou Azul |
-| 🏆 **Ranqueamento** | Sistema completo de troféus e divisões |
-| 🚫 **Blacklist** | 30+ códigos de banimento profissionais |
-| 🤝 **Parceiros** | Sistema de duos para entrar junto |
-| 📊 **Histórico** | Registro completo de partidas |
-
----
-
-## ✨ Recursos
-
-### 🎮 Sistema de Duelos
-- ✅ Criação de duelos 1v1, 2v2, 3v3, 4v4, 5v5
-- ✅ Canais privados automáticos para duelos
-- ✅ Sistema de votação para resultados
-- ✅ Substituição de jogadores
-- ✅ Auto-cancelamento por inatividade
-
-### 🏆 Sistema de Ranking
-- ✅ 19 divisões (Bronze → Mestre)
-- ✅ Troféus por vitória/derrota configuráveis
-- ✅ Hall da Fama com top jogadores
-- ✅ Winrate e estatísticas detalhadas
-- ✅ Sequência de vitórias (streak)
-
-### 🚫 Sistema de Blacklist / Procurados
-- ✅ **30+ códigos de banimento** específicos para AR2:
-  - EXP001-007: Exploits (Aimbot, Speed, God Mode, etc.)
-  - SS001-007: Screenshare violations
-  - HW001-003: Hardware bans (HWID, Serial)
-  - TOX001-005: Toxicidade
-  - ABU001-005: Game abuse
-  - ACC001-004: Account abuse
-  - MM001-004: Matchmaking abuse
-  - SRV001-003: Server violations
-- ✅ Duração configurável (permanente ou temporário)
-- ✅ Logs automáticos em canal específico
-- ✅ Auto-expiração de bans temporários
-- ✅ Histórico completo de ações
-
-### 🖼️ Sistema de Imagens
-- ✅ URLs configuráveis via `.env`
-- ✅ Thumbnails opcionais
-- ✅ Footer icons personalizados
-- ✅ Não quebra se não configurado
-
----
-
-## 📦 Requisitos
-
-- Python 3.10+
-- Discord Bot Token
-- Servidor Discord com permissões de administrador
-- (Opcional) Canais configurados para logs
+- [Instalação](#-instalação)
+- [Configuração](#-configuração)
+- [Comandos](#-comandos)
+- [Blacklist](#-sistema-de-blacklist)
+- [Divisões](#-sistema-de-divisões)
 
 ---
 
 ## 🚀 Instalação
 
-### 1. Clone o repositório
-```bash
-git clone https://github.com/seu-repo/ar2bot.git
-cd ar2bot
-```
-
-### 2. Instale as dependências
+### 1. Instale as dependências:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configure o ambiente
+### 2. Configure o arquivo `.env`:
 ```bash
 cp .env.example .env
 ```
 
-Edite o arquivo `.env`:
-
+### 3. Preencha seu `.env`:
 ```env
-# Discord Bot
 DISCORD_TOKEN=seu_token_aqui
 
-# Canais (IDs dos canais do seu servidor)
+# Canais
 PARTIDAS_CHANNEL_ID=123456789
-LOG_CHANNEL_ID=123456789
 RESULTADOS_CHANNEL_ID=123456789
 RANKING_CHANNEL_ID=123456789
 BLACKLIST_CHANNEL_ID=123456789
 
-# Imagens (Opcional - deixe vazio para não usar)
-BOT_IMAGE_URL=https://seu-site.com/imagem-bot.png
-FOOTER_IMAGE_URL=https://seu-site.com/footer-icon.png
-THUMBNAIL_URL=https://seu-site.com/thumbnail.png
-
-# Cargos com permissões
-ADMIN_ROLE_IDS=123456789,987654321
+# Cargos
+ADMIN_ROLE_IDS=123456789
 HOSTER_ROLE_IDS=123456789
 
-# Configurações de jogo
-WIN_TROPHIES=34
-LOSS_TROPHIES=17
-LOBBY_TIMEOUT_MINUTES=10
+# Opcional: Imagens
+BOT_IMAGE_URL=https://seu-site.com/imagem.png
+FOOTER_IMAGE_URL=https://seu-site.com/icon.png
 ```
 
-### 4. Execute o bot
+### 4. Execute:
 ```bash
 python main.py
 ```
@@ -151,72 +76,72 @@ python main.py
 
 ## ⚙️ Configuração
 
-### Canais Necessários
+### Canais Necessários:
+| Canal | Descrição | Comando |
+|-------|-----------|---------|
+| #saloon | Criação de duelos | `/config canal_partidas` |
+| #resultados | Resultados | `/config canal_resultados` |
+| #blacklist | Logs de ban | `/config canal_blacklist` |
+| #ranking | Hall da Fama | `/config canal_ranking` |
 
-| Canal | Descrição | Comando de Config |
-|-------|-----------|-------------------|
-| #saloon | Canal de criação de duelos | `/config canal_partidas` |
-| #resultados | Resultados dos tiroteios | `/config canal_resultados` |
-| #blacklist | Logs de procurados | `/config canal_blacklist` |
-| #ranking | Ranking ao vivo | `/config canal_ranking` |
-| #logs | Logs internos do bot | `/config canal_log` |
-
-### Cargos
-
-| Cargo | Permissões | ID no Config |
-|-------|------------|---------------|
-| 🏆 Sheriff (Admin) | Todos os comandos | `ADMIN_ROLE_IDS` |
-| 🤠 Hoster | Criar/cancelar duelos | `HOSTER_ROLE_IDS` |
-| 🔫 Pistoleiro | Jogar em duelos | Nenhum (todos) |
+### Cargos:
+| Cargo | Permissões |
+|-------|-----------|
+| 🏆 Sheriff (Admin) | Todos os comandos |
+| 🤠 Hoster | Criar/cancelar duelos |
+| 🔫 Pistoleiro | Jogar em duelos |
 
 ---
 
-## 🚫 Sistema de Blacklist / Procurados
+## 🚫 Sistema de Blacklist
 
-### Códigos de Banimento
+### Códigos de Banimento (30+):
 
-#### 🎯 EXPLOITS (Permanente)
-| Código | Motivo | Duração |
-|--------|--------|---------|
-| EXP001 | Aimbot / ESP / Wallhack | ∞ |
-| EXP002 | Speed Hack / Fly / No-Clip | ∞ |
-| EXP003 | God Mode / Invincibility | ∞ |
-| EXP004 | Infinite Ammo / No Reload | ∞ |
-| EXP005 | Item Duplication / Money Exploit | ∞ |
-| EXP006 | Teleport / Spawn Manipulation | ∞ |
-| EXP007 | Admin Commands Abuse | ∞ |
+**🎯 Exploits (Permanente):**
+- `EXP001` - Aimbot / ESP
+- `EXP002` - Speed Hack
+- `EXP003` - God Mode
+- `EXP004` - Infinite Ammo
+- `EXP005` - Duplicação
+- `EXP006` - Teleport
+- `EXP007` - Admin Abuse
 
-#### 🔍 SCREENSHARE (SS)
-| Código | Motivo | Duração |
-|--------|--------|---------|
-| SS001 | Programas de Cheat Encontrados | ∞ |
-| SS002 | Serviços Desabilitados / Drivers Suspeitos | ∞ |
-| SS003 | Historico de Downloads / Navegador | ∞ |
-| SS004 | Recusa em Compartilhar Tela | ∞ |
-| SS005 | Limpeza de Logs / Anti-Forensics | ∞ |
-| SS006 | Segundo Monitor / Overlays Ocultos | 30d |
-| SS007 | Macros / Auto-Clickers Detectados | 60d |
+**🔍 Screenshare:**
+- `SS001` - Cheats Encontrados
+- `SS002` - Serviços Desabilitados
+- `SS003` - Histórico Suspeito
+- `SS004` - Recusa em SS
+- `SS005` - Limpeza de Logs
+- `SS006` - Overlays Ocultos
+- `SS007` - Macros
 
-#### 🔧 HARDWARE BANS
-| Código | Motivo | Duração |
-|--------|--------|---------|
-| HW001 | Hardware ID (HWID) Ban | ∞ |
-| HW002 | Serial Ban - Disco/Mobo | ∞ |
-| HW003 | IP Range / VPN Bypass | ∞ |
+**🔧 Hardware:**
+- `HW001` - HWID Ban
+- `HW002` - Serial Ban
+- `HW003` - IP/VPN
 
-*(E mais 20+ códigos... veja `/blacklist motivos`)*
+**🤬 Toxicidade:**
+- `TOX001` - Comportamento Tóxico
+- `TOX002` - Racismo/Discurso de Ódio
+- `TOX003` - Doxxing
+- `TOX004` - Ear Rape
+- `TOX005` - Spam
 
-### Comandos de Blacklist
+**⚔️ Game Abuse:**
+- `ABU001` - Combat Logging
+- `ABU002` - Team Killing
+- `ABU003` - Spawn Killing
+- `ABU004` - Griefing
+- `ABU005` - RDM
 
-```bash
-/blacklist add @usuario SS001
-/blacklist add @usuario EXP002 duracao_dias:7
-/blacklist add @usuario TOX001 roblox_uuid:123456789
+### Comandos Blacklist:
+```
+/blacklist add @usuario EXP001
+/blacklist add @usuario SS001 duracao_dias:7
 /blacklist remove @usuario "Cumpriu pena"
-/blacklist motivos          # Lista todos os códigos
-/blacklist lista            # Lista procurados
-/blacklist checar @usuario  # Verifica status
-/blacklist historico @user  # Histórico completo
+/blacklist motivos      # Lista todos
+/blacklist lista         # Ver procurados
+/blacklist checar @user  # Verificar status
 ```
 
 ---
@@ -226,43 +151,35 @@ python main.py
 ### 🎮 Duelos
 | Comando | Descrição | Permissão |
 |---------|-----------|-----------|
-| `/host` | Cria um novo duelo no saloon | Hoster+ |
-| `/cancelar` | Cancela um duelo ativo | Hoster+ |
-| `/substituir` | Substitui um jogador | Hoster+ |
-| `/resultado` | Define o resultado do duelo | Hoster+ |
-| `/votar` | Vota no resultado | Participantes |
+| `/host` | Criar duelo | Hoster+ |
+| `/cancelar` | Cancelar duelo | Hoster+ |
+| `/substituir` | Trocar jogador | Hoster+ |
+| `/resultado` | Definir vencedor | Hoster+ |
 
 ### 🏆 Ranking
 | Comando | Descrição |
 |---------|-----------|
-| `/perfil` | Mostra seu perfil e estatísticas |
-| `/stats @usuario` | Mostra perfil de outro jogador |
-| `/top` | Ranking global (top 10) |
-| `/historico` | Seu histórico de partidas |
+| `/perfil` | Seu perfil |
+| `/stats @user` | Perfil de outro |
+| `/top` | Top 10 global |
+| `/historico` | Suas partidas |
 
-### 🤝 Parceiros
+### 🚫 Blacklist (Admin)
 | Comando | Descrição |
 |---------|-----------|
-| `/duo` | Gerencia seu parceiro de duelo |
-| `/conviteduo` | Aceita convite de parceiro |
-
-### 🚫 Blacklist
-| Comando | Descrição | Permissão |
-|---------|-----------|-----------|
-| `/blacklist add` | Adiciona procurado | Admin |
-| `/blacklist remove` | Remove procurado | Admin |
-| `/blacklist motivos` | Lista códigos | Admin |
-| `/blacklist lista` | Lista procurados | Admin |
-| `/blacklist checar` | Verifica status | Todos |
-| `/blacklist historico` | Histórico | Admin |
+| `/blacklist add` | Banir usuário |
+| `/blacklist remove` | Desbanir |
+| `/blacklist motivos` | Ver códigos |
+| `/blacklist lista` | Lista de bans |
 
 ### ⚙️ Admin
 | Comando | Descrição |
 |---------|-----------|
-| `/addtrofeu @user 100` | Adiciona troféus |
-| `/removertrofeu @user 50` | Remove troféus |
-| `/config canal_partidas #canal` | Configura canal |
-| `/config trofeus 34 17` | Define troféus padrão |
+| `/addtrofeu @user 100` | Dar troféus |
+| `/removertrofeu @user 50` | Remover troféus |
+| `/config canal_partidas #canal` | Setar canal |
+| `/config trofeus 34 17` | Configurar troféus |
+| `/resetartemporada` | Resetar temporada |
 
 ---
 
@@ -273,65 +190,50 @@ python main.py
 | Bronze I-III | 0-299 | 🥉 |
 | Prata I-III | 300-599 | 🥈 |
 | Ouro I-III | 600-999 | 🥇 |
-| Platina I-III | 1000-1600 | 💎 |
-| Diamante I-III | 1601-2200 | 🔷 |
-| Ascendente I-III | 2201-2799 | 🔥 |
+| Platina I-III | 1000-1599 | 💎 |
+| Diamante I-III | 1600-2199 | 🔷 |
+| Ascendente I-III | 2200-2799 | 🔥 |
 | **Mestre** | 2800+ | 👑 |
 
 ---
 
-## 📸 Screenshots
+## �️ Sistema de Imagens
 
-*Adicione screenshots do bot em funcionamento aqui*
+O bot suporta **20+ imagens configuráveis** via `.env`:
 
----
+```env
+# Principais
+BOT_IMAGE_URL=           # Imagem padrão
+FOOTER_IMAGE_URL=        # Ícone do rodapé
+THUMBNAIL_URL=           # Thumbnail padrão
 
-## 📝 Changelog
+# Por tipo
+LOBBY_IMAGE_URL=         # Lobby
+RESULT_IMAGE_URL=        # Resultados
+RANKING_IMAGE_URL=       # Hall da Fama
+PROFILE_IMAGE_URL=       # Perfil
+BLACKLIST_IMAGE_URL=     # Blacklist
+BAN_IMAGE_URL=           # Banimento
+SUCCESS_IMAGE_URL=       # Sucesso
+ERROR_IMAGE_URL=         # Erro
+WARNING_IMAGE_URL=       # Aviso
+INFO_IMAGE_URL=          # Info
+```
 
-### v2.0 - Sistema Blacklist Profissional
-- ✅ 30+ códigos de banimento específicos para AR2
-- ✅ Sistema de Screenshare (SS) detection
-- ✅ Hardware bans (HWID, Serial)
-- ✅ Auto-expiração de bans temporários
-- ✅ Logs em canal dedicado
-
-### v1.5 - Sistema de Imagens
-- ✅ Imagens configuráveis via .env
-- ✅ Thumbnails opcionais
-- ✅ Footer icons personalizados
-
-### v1.0 - Release Inicial
-- ✅ Sistema de duelos ranqueados
-- ✅ Sistema de parceiros (duos)
-- ✅ Ranking global
-- ✅ 19 divisões
-
----
-
-## 🏆 Créditos
-
-<div align="center">
-
-**Desenvolvido com 🤠 por** `YK`
-
-*Para o servidor* **OUT SAIDERS**
-
-[![Discord](https://img.shields.io/badge/Join-OUT%20SAIDERS-5865F2?style=flat-square&logo=discord)](https://discord.gg)
-
-</div>
+> **Nota:** Deixe vazio para não usar imagens. O bot funciona perfeitamente sem!
 
 ---
 
-## 📄 Licença
+## 📞 Suporte
 
-Este projeto é privado e exclusivo para o servidor **OUT SAIDERS**.
+**Discord do Dono:** [discord.gg/Hy68Ht6St6](https://discord.gg/Hy68Ht6St6)
 
 ---
 
 <div align="center">
 
-**🌵 OUT SAIDERS 🤠 AR2 Sheriff Bot**  
-*Sistema Profissional de Duelos Ranqueados*
+**🤠 AR2 Sheriff Bot**  
+*Sistema Profissional de Duelos*
 
 </div>
 - 📊 **Ranking Ao Vivo** - Top 100 atualizado automaticamente
