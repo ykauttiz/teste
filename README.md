@@ -1,33 +1,339 @@
-# 🤠 AR2 Sheriff Bot — Guia Completo do Velho Oeste
+<div align="center">
 
-Bot de duelos ranqueados no tema **Faroeste (Wild West)** para servidores Discord do jogo **Apocalypse Rising 2 (Roblox)**.
-Sistema completo de matchmaking, troféus, divisões, parceiros de duelo e lista de procurados.
+# 🌵 OUT SAIDERS 🤠 AR2 Sheriff Bot
+
+### *Sistema Profissional de Duelos Ranqueados para Apocalypse Rising 2*
+
+[![Discord](https://img.shields.io/badge/Discord-OUT%20SAIDERS-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg)
+[![Roblox](https://img.shields.io/badge/Roblox-AR2-000000?style=for-the-badge&logo=roblox&logoColor=white)](https://roblox.com)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+
+<img src="https://cdn.discordapp.com/emojis/129312.png" width="100" height="100" alt="Sheriff">
+
+**Bot de duelos ranqueados no tema Faroeste (Wild West)**  
+*Para servidores Discord do jogo Apocalypse Rising 2 (Roblox)*
+
+[Sistema de Blacklist](#-sistema-de-blacklist--procurados) • [Comandos](#-comandos) • [Instalação](#-instalação)
+
+</div>
 
 ---
 
 ## 📋 Índice
-1. [Visão Geral](#visão-geral)
-2. [Requisitos](#requisitos)
-3. [Instalação](#instalação)
-4. [Configuração de Cargos](#configuração-de-cargos)
-5. [Como Ser um Xerife (Hoster)](#como-ser-um-xerife-hoster)
-6. [Todos os Comandos](#todos-os-comandos)
-7. [Fluxo de um Duelo](#fluxo-de-um-duelo)
-8. [Sistema de Divisões](#sistema-de-divisões)
-9. [Sistema de Parceiros](#sistema-de-parceiros)
-10. [Lista de Procurados (Blacklist)](#lista-de-procurados-blacklist)
-11. [Configurações Avançadas](#configurações-avançadas)
-12. [Solução de Problemas](#solução-de-problemas)
+1. [Visão Geral](#-visão-geral)
+2. [Recursos](#-recursos)
+3. [Requisitos](#-requisitos)
+4. [Instalação](#-instalação)
+5. [Configuração](#-configuração)
+6. [Sistema de Blacklist / Procurados](#-sistema-de-blacklist--procurados)
+7. [Comandos](#-comandos)
+8. [Sistema de Divisões](#-sistema-de-divisões)
+9. [Screenshots](#-screenshots)
+10. [Créditos](#-créditos)
 
 ---
 
-## Visão Geral
+## 🎯 Visão Geral
 
-O **AR2 Sheriff Bot** gerencia duelos ranqueados no estilo Faroeste:
+O **OUT SAIDERS AR2 Sheriff Bot** é um sistema profissional de duelos ranqueados no estilo Faroeste:
 
-- 🤠 **Xerifes (Hosters)** criam duelos no saloon
-- 🔫 **Pistoleiros (Jogadores)** entram nos bandos Vermelho ou Azul
-- 🏆 **Sheriffs (Admins)** definem o resultado final dos tiroteios
+| Funcionalidade | Descrição |
+|---------------|-----------|
+| 🤠 **Xerifes** | Criam duelos no saloon e gerenciam partidas |
+| 🔫 **Pistoleiros** | Entram nos bandos Vermelho ou Azul |
+| 🏆 **Ranqueamento** | Sistema completo de troféus e divisões |
+| 🚫 **Blacklist** | 30+ códigos de banimento profissionais |
+| 🤝 **Parceiros** | Sistema de duos para entrar junto |
+| 📊 **Histórico** | Registro completo de partidas |
+
+---
+
+## ✨ Recursos
+
+### 🎮 Sistema de Duelos
+- ✅ Criação de duelos 1v1, 2v2, 3v3, 4v4, 5v5
+- ✅ Canais privados automáticos para duelos
+- ✅ Sistema de votação para resultados
+- ✅ Substituição de jogadores
+- ✅ Auto-cancelamento por inatividade
+
+### 🏆 Sistema de Ranking
+- ✅ 19 divisões (Bronze → Mestre)
+- ✅ Troféus por vitória/derrota configuráveis
+- ✅ Hall da Fama com top jogadores
+- ✅ Winrate e estatísticas detalhadas
+- ✅ Sequência de vitórias (streak)
+
+### 🚫 Sistema de Blacklist / Procurados
+- ✅ **30+ códigos de banimento** específicos para AR2:
+  - EXP001-007: Exploits (Aimbot, Speed, God Mode, etc.)
+  - SS001-007: Screenshare violations
+  - HW001-003: Hardware bans (HWID, Serial)
+  - TOX001-005: Toxicidade
+  - ABU001-005: Game abuse
+  - ACC001-004: Account abuse
+  - MM001-004: Matchmaking abuse
+  - SRV001-003: Server violations
+- ✅ Duração configurável (permanente ou temporário)
+- ✅ Logs automáticos em canal específico
+- ✅ Auto-expiração de bans temporários
+- ✅ Histórico completo de ações
+
+### 🖼️ Sistema de Imagens
+- ✅ URLs configuráveis via `.env`
+- ✅ Thumbnails opcionais
+- ✅ Footer icons personalizados
+- ✅ Não quebra se não configurado
+
+---
+
+## 📦 Requisitos
+
+- Python 3.10+
+- Discord Bot Token
+- Servidor Discord com permissões de administrador
+- (Opcional) Canais configurados para logs
+
+---
+
+## 🚀 Instalação
+
+### 1. Clone o repositório
+```bash
+git clone https://github.com/seu-repo/ar2bot.git
+cd ar2bot
+```
+
+### 2. Instale as dependências
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Configure o ambiente
+```bash
+cp .env.example .env
+```
+
+Edite o arquivo `.env`:
+
+```env
+# Discord Bot
+DISCORD_TOKEN=seu_token_aqui
+
+# Canais (IDs dos canais do seu servidor)
+PARTIDAS_CHANNEL_ID=123456789
+LOG_CHANNEL_ID=123456789
+RESULTADOS_CHANNEL_ID=123456789
+RANKING_CHANNEL_ID=123456789
+BLACKLIST_CHANNEL_ID=123456789
+
+# Imagens (Opcional - deixe vazio para não usar)
+BOT_IMAGE_URL=https://seu-site.com/imagem-bot.png
+FOOTER_IMAGE_URL=https://seu-site.com/footer-icon.png
+THUMBNAIL_URL=https://seu-site.com/thumbnail.png
+
+# Cargos com permissões
+ADMIN_ROLE_IDS=123456789,987654321
+HOSTER_ROLE_IDS=123456789
+
+# Configurações de jogo
+WIN_TROPHIES=34
+LOSS_TROPHIES=17
+LOBBY_TIMEOUT_MINUTES=10
+```
+
+### 4. Execute o bot
+```bash
+python main.py
+```
+
+---
+
+## ⚙️ Configuração
+
+### Canais Necessários
+
+| Canal | Descrição | Comando de Config |
+|-------|-----------|-------------------|
+| #saloon | Canal de criação de duelos | `/config canal_partidas` |
+| #resultados | Resultados dos tiroteios | `/config canal_resultados` |
+| #blacklist | Logs de procurados | `/config canal_blacklist` |
+| #ranking | Ranking ao vivo | `/config canal_ranking` |
+| #logs | Logs internos do bot | `/config canal_log` |
+
+### Cargos
+
+| Cargo | Permissões | ID no Config |
+|-------|------------|---------------|
+| 🏆 Sheriff (Admin) | Todos os comandos | `ADMIN_ROLE_IDS` |
+| 🤠 Hoster | Criar/cancelar duelos | `HOSTER_ROLE_IDS` |
+| 🔫 Pistoleiro | Jogar em duelos | Nenhum (todos) |
+
+---
+
+## 🚫 Sistema de Blacklist / Procurados
+
+### Códigos de Banimento
+
+#### 🎯 EXPLOITS (Permanente)
+| Código | Motivo | Duração |
+|--------|--------|---------|
+| EXP001 | Aimbot / ESP / Wallhack | ∞ |
+| EXP002 | Speed Hack / Fly / No-Clip | ∞ |
+| EXP003 | God Mode / Invincibility | ∞ |
+| EXP004 | Infinite Ammo / No Reload | ∞ |
+| EXP005 | Item Duplication / Money Exploit | ∞ |
+| EXP006 | Teleport / Spawn Manipulation | ∞ |
+| EXP007 | Admin Commands Abuse | ∞ |
+
+#### 🔍 SCREENSHARE (SS)
+| Código | Motivo | Duração |
+|--------|--------|---------|
+| SS001 | Programas de Cheat Encontrados | ∞ |
+| SS002 | Serviços Desabilitados / Drivers Suspeitos | ∞ |
+| SS003 | Historico de Downloads / Navegador | ∞ |
+| SS004 | Recusa em Compartilhar Tela | ∞ |
+| SS005 | Limpeza de Logs / Anti-Forensics | ∞ |
+| SS006 | Segundo Monitor / Overlays Ocultos | 30d |
+| SS007 | Macros / Auto-Clickers Detectados | 60d |
+
+#### 🔧 HARDWARE BANS
+| Código | Motivo | Duração |
+|--------|--------|---------|
+| HW001 | Hardware ID (HWID) Ban | ∞ |
+| HW002 | Serial Ban - Disco/Mobo | ∞ |
+| HW003 | IP Range / VPN Bypass | ∞ |
+
+*(E mais 20+ códigos... veja `/blacklist motivos`)*
+
+### Comandos de Blacklist
+
+```bash
+/blacklist add @usuario SS001
+/blacklist add @usuario EXP002 duracao_dias:7
+/blacklist add @usuario TOX001 roblox_uuid:123456789
+/blacklist remove @usuario "Cumpriu pena"
+/blacklist motivos          # Lista todos os códigos
+/blacklist lista            # Lista procurados
+/blacklist checar @usuario  # Verifica status
+/blacklist historico @user  # Histórico completo
+```
+
+---
+
+## ⌨️ Comandos
+
+### 🎮 Duelos
+| Comando | Descrição | Permissão |
+|---------|-----------|-----------|
+| `/host` | Cria um novo duelo no saloon | Hoster+ |
+| `/cancelar` | Cancela um duelo ativo | Hoster+ |
+| `/substituir` | Substitui um jogador | Hoster+ |
+| `/resultado` | Define o resultado do duelo | Hoster+ |
+| `/votar` | Vota no resultado | Participantes |
+
+### 🏆 Ranking
+| Comando | Descrição |
+|---------|-----------|
+| `/perfil` | Mostra seu perfil e estatísticas |
+| `/stats @usuario` | Mostra perfil de outro jogador |
+| `/top` | Ranking global (top 10) |
+| `/historico` | Seu histórico de partidas |
+
+### 🤝 Parceiros
+| Comando | Descrição |
+|---------|-----------|
+| `/duo` | Gerencia seu parceiro de duelo |
+| `/conviteduo` | Aceita convite de parceiro |
+
+### 🚫 Blacklist
+| Comando | Descrição | Permissão |
+|---------|-----------|-----------|
+| `/blacklist add` | Adiciona procurado | Admin |
+| `/blacklist remove` | Remove procurado | Admin |
+| `/blacklist motivos` | Lista códigos | Admin |
+| `/blacklist lista` | Lista procurados | Admin |
+| `/blacklist checar` | Verifica status | Todos |
+| `/blacklist historico` | Histórico | Admin |
+
+### ⚙️ Admin
+| Comando | Descrição |
+|---------|-----------|
+| `/addtrofeu @user 100` | Adiciona troféus |
+| `/removertrofeu @user 50` | Remove troféus |
+| `/config canal_partidas #canal` | Configura canal |
+| `/config trofeus 34 17` | Define troféus padrão |
+
+---
+
+## 🎖️ Sistema de Divisões
+
+| Divisão | Troféus | Emoji |
+|---------|---------|-------|
+| Bronze I-III | 0-299 | 🥉 |
+| Prata I-III | 300-599 | 🥈 |
+| Ouro I-III | 600-999 | 🥇 |
+| Platina I-III | 1000-1600 | 💎 |
+| Diamante I-III | 1601-2200 | 🔷 |
+| Ascendente I-III | 2201-2799 | 🔥 |
+| **Mestre** | 2800+ | 👑 |
+
+---
+
+## 📸 Screenshots
+
+*Adicione screenshots do bot em funcionamento aqui*
+
+---
+
+## 📝 Changelog
+
+### v2.0 - Sistema Blacklist Profissional
+- ✅ 30+ códigos de banimento específicos para AR2
+- ✅ Sistema de Screenshare (SS) detection
+- ✅ Hardware bans (HWID, Serial)
+- ✅ Auto-expiração de bans temporários
+- ✅ Logs em canal dedicado
+
+### v1.5 - Sistema de Imagens
+- ✅ Imagens configuráveis via .env
+- ✅ Thumbnails opcionais
+- ✅ Footer icons personalizados
+
+### v1.0 - Release Inicial
+- ✅ Sistema de duelos ranqueados
+- ✅ Sistema de parceiros (duos)
+- ✅ Ranking global
+- ✅ 19 divisões
+
+---
+
+## 🏆 Créditos
+
+<div align="center">
+
+**Desenvolvido com 🤠 por** `YK`
+
+*Para o servidor* **OUT SAIDERS**
+
+[![Discord](https://img.shields.io/badge/Join-OUT%20SAIDERS-5865F2?style=flat-square&logo=discord)](https://discord.gg)
+
+</div>
+
+---
+
+## 📄 Licença
+
+Este projeto é privado e exclusivo para o servidor **OUT SAIDERS**.
+
+---
+
+<div align="center">
+
+**🌵 OUT SAIDERS 🤠 AR2 Sheriff Bot**  
+*Sistema Profissional de Duelos Ranqueados*
+
+</div>
 - 📊 **Ranking Ao Vivo** - Top 100 atualizado automaticamente
 - 🌵 Sistema de troféus para subir no ranking
 - 👥 Sistema de parceiros para duelar em dupla
@@ -415,7 +721,85 @@ await bot.tree.sync(guild=discord.Object(id=SEU_SERVER_ID))
 
 ---
 
-## 🛠️ Tecnologias
+## Sistema de Correção Automática de Problemas
+
+O bot possui um **sistema de monitoramento** que verifica duelos a cada minuto e corrige problemas automaticamente:
+
+### Timeouts Automáticos
+
+| Situação | Timeout | Aviso Prévio |
+|----------|---------|--------------|
+| Duelo esperando jogadores | 30 minutos | 10 min antes |
+| Duelo em andamento sem resultado | 90 minutos | 10 min antes |
+
+**O que acontece:**
+- Aviso é enviado no canal 10 minutos antes do timeout
+- Duelo é cancelado automaticamente após o timeout
+- Motivo é registrado nos logs
+
+### Jogadores que Saem do Servidor
+
+**Detecção:** Sistema verifica a cada minuto se algum jogador saiu do servidor durante um duelo ativo.
+
+**Ação automática:**
+- Jogador é removido do duelo imediatamente
+- Notificação é enviada no canal (auto-deleta em 1 min)
+- Se todos saírem, o duelo é cancelado
+
+### Prevenção de Problemas
+
+**Proteções implementadas:**
+
+1. **Anti-Duplicata:**
+   - Jogador não pode entrar em múltiplos duelos simultâneos
+   - Xerife não pode criar novo duelo se já estiver em um
+
+2. **Anti-Spam:**
+   - Xerifes blacklistados não podem criar duelos
+   - Cooldown implícito entre criações
+
+3. **Proteção de Canal:**
+   - Se canal de duelo for deletado, duelo é cancelado automaticamente
+   - Mensagens órfãs são detectadas e limpas
+
+4. **Persistência de Dados:**
+   - Banco de dados SQLite salva automaticamente
+   - Troféus e histórico são preservados mesmo se bot reiniciar
+   - Duelos em andamento persistem entre reinicializações
+
+### Comandos de Emergência
+
+**Para Admins (Sheriffs):**
+
+```bash
+/cancelar [match_id]     # Cancela qualquer duelo imediatamente
+/forcarank               # Força atualização do ranking
+```
+
+**Problemas comuns e soluções:**
+
+| Problema | Causa | Solução |
+|----------|-------|---------|
+| "Duelo não aparece" | Canal incorreto | Configure com `/config canal_partidas` |
+| "Não consigo entrar" | Já está em outro duelo | Saia do duelo atual ou espere terminar |
+| "Botão não funciona" | Duelo expirou | Duelo foi cancelado por timeout |
+| "Resultado não registra" | Apenas admins podem | Peça a um Sheriff (Admin) |
+| "Perdi troféus sem jogar" | Saiu do servidor | Sistema detectou e aplicou regras |
+
+### Logs e Monitoramento
+
+O bot registra automaticamente:
+- Criação e cancelamento de duelos
+- Entradas e saídas de jogadores
+- Definição de resultados
+- Timeouts e cancelamentos automáticos
+- Erros e exceções
+
+**Canal de logs:** Configure com `/config canal_log #canal`
+
+---
+
+## Tecnologias
 
 - **Python 3.11+**
 - **discord.py 2.x** — biblioteca oficial
@@ -424,18 +808,31 @@ await bot.tree.sync(guild=discord.Object(id=SEU_SERVER_ID))
 
 ---
 
-## 📝 Notas da Versão
+## Notas da Versão
+
+### v2.2 — Sistema de Correção de Problemas
+- Timeouts automáticos para duelos inativos
+- Detecção automática de jogadores que saíram
+- Proteção anti-duplicata de duelos
+- Limpeza automática de duelos órfãos
+- Sistema de avisos antes de timeouts
 
 ### v2.1 — Ranking Ao Vivo & Estatísticas Avançadas
-- 🏆 Sistema de Ranking Ao Vivo (atualiza a cada 30 min)
-- 📊 Comando `/stats` com análise detalhada (KDA, consistência, insights)
-- � Notificações @everyone para mudanças no Top 3
-- 🎯 Detecção automática de novos Mestres (2800+ troféus)
-- 📈 Estatísticas de horário de pico
-- 📊 Análise de volatilidade e consistência
+- Sistema de Ranking Ao Vivo (atualiza a cada 30 min)
+- Comando `/stats` com análise detalhada
+- Notificações @everyone para novos duelos
+- Estatísticas de horário de pico
+- Análise de volatilidade e consistência
+
+### v2.0 — Temática Faroeste
+- Temática Wild West completa
+- Apenas Hosters podem criar duelos
+- Apenas Admins podem definir resultados
+- Sistema de votação removido
+- Mensagens temáticas em todos os comandos
 
 ---
 
 *Bot desenvolvido para AR2 Brasil — Apocalypse Rising 2*
 
-**Boa sorte nos duelos e boa escalada no ranking!** 🏆🔥🤠
+**Boa sorte nos duelos e boa escalada no ranking!** 
